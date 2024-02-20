@@ -1,8 +1,13 @@
+import os
+
 import requests
 from bs4 import BeautifulSoup
 
+from dotenv import load_dotenv
+
+
 def get_fuelPrices():
-    url = "https://www.benzin.sk/"
+    url = os.getenv('website')
     response = requests.get(url)
 
     if response.status_code == 200:
